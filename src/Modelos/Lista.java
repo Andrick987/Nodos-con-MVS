@@ -6,6 +6,7 @@ import javax.swing.JOptionPane;
 public class Lista {
     Nodo primero;
     Nodo Auxiliar;
+    Nodo cola;
     String cadena = "";
     
     public void Apilar(){
@@ -23,6 +24,22 @@ public class Lista {
             primero = nuevoNodo;
         }
         JOptionPane.showMessageDialog(null, "Nodo APILADO");
+    }
+    
+    public void Encolar(int dato){
+        
+        Nodo nuevoNodo = new Nodo(dato);
+        
+        if(primero == null){
+            primero = nuevoNodo; 
+            cola = nuevoNodo;
+            
+        }
+        else{
+            cola.siguiente = nuevoNodo;
+            cola = nuevoNodo;
+        }
+        JOptionPane.showMessageDialog(null, "Nodo ENCOLADO");
     }
     
     public String Listar(){
