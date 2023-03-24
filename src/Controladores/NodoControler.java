@@ -41,7 +41,11 @@ public class NodoControler implements ActionListener{
             this.VistaNodos.setVisible(true);
         }
         if(e.getSource() == this.VistaNodos.btnApilar){
-            this.nuevaLista.Apilar(Integer.parseInt(this.VistaNodos.txtDato.getText()));
+        this.nuevaLista.Apilar(Integer.parseInt(this.VistaNodos.txtDato.getText()));
+            this.VistaNodos.txtLista.setText(this.nuevaLista.Listar());
+        }
+        if(e.getSource() == this.VistaNodos.btnEncolar){
+            this.nuevaLista.Encolar(Integer.parseInt(this.VistaNodos.txtDato.getText()));
             this.VistaNodos.txtLista.setText(this.nuevaLista.Listar());
         }
     }
